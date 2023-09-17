@@ -1,1 +1,13 @@
-{% loat static %}
+{% extends 'resumeapp/base.html' %}
+
+{% load static %}
+
+{% block title %}{{block.super}} | Home {% endblock title %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <h1>Hello this is index</h1>
+    </div>
+</div>
+{% endblock %}
