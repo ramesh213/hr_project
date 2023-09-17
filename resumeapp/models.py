@@ -5,7 +5,6 @@ class Candidate(models.Model):
     name = models.CharField(max_length=80)
     dob = models.DateField(auto_now=False, auto_now_add=False)
     gender = models.CharField(max_length=10)
-    locality = models.CharField(max_length=100)
     city = models.CharField(max_length=80)
     pin = models.PositiveBigIntegerField()
     state = models.CharField(max_length=80)
