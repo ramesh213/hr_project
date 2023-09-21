@@ -7,10 +7,15 @@
 {% block content %}
 <div class="container p-3">
     <div class="row">
-        <div class="welcom text-center">
-            <h1 class="alert alert-success text-center">Welcome to the resume application !</h1>
+        <div class="col-sm-9 mx-auto">
+            <div class="welcom text-center">
+                <h1 class="alert alert-success text-center">Welcome to the resume application !</h1>
+            </div>
         </div>
-        <div class="col-sm-12">
+
+        <div class="col-sm-9 mx-auto">
+            <a class="btn btn-warning float-end btn-sm mx-2" href="{% url 'show' %}">Candidate List</a>
+
             <form action="" method="post" class="shadow px-lg-5 py-5"  enctype="multipart/form-data">
                 <h3>Please fill out following form!!</h3>
 
