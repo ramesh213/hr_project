@@ -2,21 +2,26 @@
 
 {% load static %}
 
-{% block title %}{{block.super}} | Show {% endblock title %}
+{% block title %}{{ block.super }} | Show {% endblock title %}
 
 {% block content %}
 
-
 <div class="col-sm-8 mx-auto mt-3 shadow p-5">
-<h1 class="alert alert-primary text-center">Welcome to candidate list !!</h1>
-{% for fm in form %}
-<div class="content">
-    <h5>    {{fm.id}}.{{fm.name}}</h5>
-    <a class="btn btn-success
-     float-end" href="{% url 'candidate' fm.id %}">View Profile</a>
-<hr>
-</div>
-{% endfor %}
-</div>
-{% endblock %}
+    <h1 class="alert alert-primary text-center">Welcome to the candidate list !!</h1>
+    
+    {% if candidate %}
+        {% for data in candidate %}
+        <div class="content">
+            <h5 class="float-start">{{ data.id }}.{{ data.name }}</h5>
+            <a class="btn btn-success btn-sm" href="{% url 'candidate' data.id %}">View Profile</a>
+            <hr>
+        </div>
+        {% endfor %}
+    {% else %}
+        <h4>No candidate list found...Please add records first !!</h4>
+    {% endif %}
 
+    <a class="btn btn-warning btn-sm float-end mx-2" href="{% url 'home' %}">Back to home</a>
+</div>
+
+{% endblock %}

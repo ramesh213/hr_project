@@ -2,8 +2,11 @@
 
 body {
     font-family: monospace;
-    font-size: 20px;
+    font-size: 18px;
 
+}
+.applicant-block {
+    border-radius: 5px;
 }
 #id_gender,#id_job_city {
     display: inline-flex;
@@ -21,7 +24,13 @@ body {
     background-color:darkgray;
 }
 
+.content h5{
+    margin-left: 50px;
+}
 
+.content a {
+    margin-left: 400px;
+}
 .content a {
     text-decoration: none;
 }

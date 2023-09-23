@@ -1,16 +1,17 @@
-{% load myfilter %}
 {% extends 'resumeapp/base.html' %}
+{% load myfilter %}
 
 {% load static %}
-{% block title %}{{block.super}}|Profile  {% endblock title %}
+{% block title %}{{block.super}} | Profile  {% endblock title %}
 
 {% block content %}
 
 
 <div class="applicant-block col-sm-8 mx-auto pb-5 mt-3">
 <h1 class="alert alert-primary text-center">Welcome to candidate profile !!</h1>
+
 <div class="candidate-image d-inline float-end mx-5">
-    <img src="{{candidate.profile_image.url}}" alt="Profile_photo" class="img-fluid" width="300" height="300">
+    <img src="{{candidate.profile_image.url}}" alt="Profile_photo" class="img-fluid" width="250" height="250">
 </div>
     <div class="candidate-data mx-5">
      <p>Application No: {{candidate.id}}
@@ -21,8 +22,8 @@
      <p>Email: {{candidate.email}}</p>
      <p>City: {{candidate.city}}</p>
      <p>State: {{candidate.state}}</p>
-     <p>Prefferd job city: {{candidate.job_city|remove_brackets:"[]'"}}</p>
-<p>Your CV: <a href="{{ candidate.doc_file.url}}">Download Resume</a> </p>
+     <p>Prefferd job city: {{candidate.job_city|remove_special:"[]'"}}</p>
+    <p>Your CV: <a href="{{ candidate.doc_file.url}}">Download Resume</a> </p>
     </div>
     <a class="btn btn-warning btn-sm float-end mx-2" href="{% url 'home' %}">Back to home</a>
 

@@ -23,8 +23,8 @@ class HomeView(View):
 #Fetching all the objects from database        
 class ShowView(View):
     def get(self, request):
-            form = Candidate.objects.all()
-            return render(request, 'resumeapp/show.html',{'form': form})
+            candidate = Candidate.objects.all()
+            return render(request, 'resumeapp/show.html',{'candidate': candidate})
 
 #fetching single object based on id
 class CandidateView(View):
